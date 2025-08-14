@@ -14,7 +14,6 @@ const LoginForm = ({ onSuccess }) => {
 
   const { login } = useAuth();
 
-  //cambios en los inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -34,7 +33,6 @@ const LoginForm = ({ onSuccess }) => {
     }
   };
 
-  // validacion formulario
   const validateForm = () => {
     const newErrors = {};
 
@@ -52,7 +50,6 @@ const LoginForm = ({ onSuccess }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -90,8 +87,6 @@ const LoginForm = ({ onSuccess }) => {
               Accede a tu cuenta para gestionar tus tareas
             </p>
           </div>
-
-          {/*errores de login */}
           {loginError && (
             <Alert variant="danger" className="mb-3">
               <strong>Error:</strong> {loginError}

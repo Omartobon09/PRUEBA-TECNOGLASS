@@ -1,4 +1,4 @@
-// src/pages/LoginPage.jsx
+
 import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -10,7 +10,6 @@ const LoginPage = () => {
   const location = useLocation();
   const { isAuthenticated } = useAuth();
 
-  // Si ya está autenticado, redirigir a tareas
   useEffect(() => {
     if (isAuthenticated) {
       const from = location.state?.from?.pathname || '/tasks';
@@ -18,7 +17,7 @@ const LoginPage = () => {
     }
   }, [isAuthenticated, navigate, location]);
 
-  // Función que se ejecuta cuando el login es exitoso 
+
   const handleLoginSuccess = () => {
     const from = location.state?.from?.pathname || '/tasks';
     navigate(from, { replace: true });
@@ -32,13 +31,7 @@ const LoginPage = () => {
             <div className="text-center mb-4">
             </div>
             <LoginForm onSuccess={handleLoginSuccess} />
-            
-            {/* Footer */}
-            <div className="text-center mt-4">
-              <small className="text-muted">
-                © 2025 TECNOGLASS - Prueba Técnica
-              </small>
-            </div>
+           
           </Col>
         </Row>
       </Container>

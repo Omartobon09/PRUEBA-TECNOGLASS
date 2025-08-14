@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { authService } from "../services/authService";
 
@@ -17,7 +16,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Verificar autenticación al cargar la aplicación
   useEffect(() => {
     const checkAuth = () => {
       try {
@@ -43,7 +41,6 @@ export const AuthProvider = ({ children }) => {
     checkAuth();
   }, []);
 
-  // Función para iniciar sesión
   const login = async (email, password) => {
     setLoading(true);
     try {
@@ -64,7 +61,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Función para cerrar sesión
   const logout = () => {
     authService.logout();
     setUser(null);

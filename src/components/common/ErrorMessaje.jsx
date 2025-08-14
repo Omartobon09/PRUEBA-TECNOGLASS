@@ -1,4 +1,4 @@
-// src/components/common/ErrorMessage.jsx
+
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 import { FaExclamationTriangle } from 'react-icons/fa';

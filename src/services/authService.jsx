@@ -1,8 +1,8 @@
-// src/services/authService.js
+
 import { API_URLS, API_CONFIG, STORAGE_KEYS } from "../utils/constants";
 
 export const authService = {
-  // Iniciar sesión
+
   async login(email, password) {
     try {
       const response = await fetch(API_URLS.LOGIN, {
@@ -26,7 +26,7 @@ export const authService = {
 
       const data = await response.json();
 
-      // Guardar token en localStorage
+    
       localStorage.setItem(STORAGE_KEYS.TOKEN, data.token);
       localStorage.setItem(STORAGE_KEYS.USER_EMAIL, email);
 
@@ -44,18 +44,17 @@ export const authService = {
     }
   },
 
-  // // Cerrar sesión
-  // logout() {
-  //   localStorage.removeItem(STORAGE_KEYS.TOKEN);
-  //   localStorage.removeItem(STORAGE_KEYS.USER_EMAIL);
-  // },
+     logout() {
+     localStorage.removeItem(STORAGE_KEYS.TOKEN);
+     localStorage.removeItem(STORAGE_KEYS.USER_EMAIL);
+   },
 
-  // Obtener token del localStorage
+ 
   getToken() {
     return localStorage.getItem(STORAGE_KEYS.TOKEN);
   },
 
-  // Obtener datos del usuario
+
   getUser() {
     const email = localStorage.getItem(STORAGE_KEYS.USER_EMAIL);
     const token = localStorage.getItem(STORAGE_KEYS.TOKEN);
@@ -67,7 +66,7 @@ export const authService = {
     return { email };
   },
 
-  // Verificar si el usuario está autenticado
+
   isAuthenticated() {
     const token = this.getToken();
     return !!token;

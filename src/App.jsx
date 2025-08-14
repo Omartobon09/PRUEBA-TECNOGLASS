@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -19,13 +18,10 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            {/* Ruta raíz redirige a tareas */}
             <Route path="/" element={<Navigate to="/tasks" replace />} />
 
-            {/* Ruta de login */}
             <Route path="/login" element={<LoginPage />} />
 
-            {/* Rutas protegidas */}
             <Route
               path="/tasks"
               element={
