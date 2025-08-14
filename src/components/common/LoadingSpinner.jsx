@@ -1,9 +1,12 @@
-const LoadingSpinner = () => {
+// src/components/common/LoadingSpinner.jsx
+import React from 'react';
+import { Spinner } from 'react-bootstrap';
+
+const LoadingSpinner = ({ size = 'border', variant = 'primary', text = 'Cargando...' }) => {
   return (
-    <div className="d-flex justify-content-center">
-      <div className="spinner-border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
+    <div className="text-center">
+      <Spinner animation={size} variant={variant} className="mb-2" />
+      {text && <div className="text-muted">{text}</div>}
     </div>
   );
 };

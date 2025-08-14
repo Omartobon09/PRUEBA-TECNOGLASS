@@ -1,13 +1,6 @@
-import { useState, useEffect } from 'react';
+// src/hooks/useAuth.js
+import { useAuthContext } from '../contexts/AuthContext';
 
-const useAuth = () => {
-  //hook personalizado de auth
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  return {
-    isAuthenticated,
-    setIsAuthenticated,
-  };
+export const useAuth = () => {
+  return useAuthContext();
 };
-
-export default useAuth;
